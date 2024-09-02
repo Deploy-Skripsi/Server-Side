@@ -6,7 +6,8 @@ const checkRole = require('../middlewares/checkRole');
 
 router.get('/',Auth, checkRole(['Admin']), getAllUser );
 router.get('/:_id',findUserById);
-router.post('/register',Auth, checkRole(['Admin']), registerUser);
+// router.post('/register',Auth, checkRole(['Admin']), registerUser);
+router.post('/register', registerUser);
 router.post('/login', loginUser);
 router.put('/edit/:_id', Auth, checkRole(['User']), editUser);
 router.post('/logout',logoutUser);
