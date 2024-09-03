@@ -4,7 +4,8 @@ const { registerUser,loginUser,editUser, getAllUser, findUserById, logoutUser,de
 const Auth = require('../middlewares/authMiddleware');
 const checkRole = require('../middlewares/checkRole');
 
-router.get('/',Auth, checkRole(['Admin']), getAllUser );
+// router.get('/',Auth, checkRole(['Admin']), getAllUser );
+router.get('/', getAllUser );
 router.get('/:_id',findUserById);
 // router.post('/register',Auth, checkRole(['Admin']), registerUser);
 router.post('/register', registerUser);
